@@ -1,4 +1,4 @@
-package es.fpdual.eadmin.eadmin.modulo;
+package es.fpdual.eadmin.eadmin.modelo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -32,6 +32,10 @@ public class DocumentoPropuestaTest {
 		assertEquals(EJERCICIO_PROPUESTA, doc_pro1.getEjercicio());
 		assertEquals(GRUPO_POLITICO, doc_pro1.getGrupoPolitico());
 	
+	}
+	
+	public void pruebaToString() {
+		doc_pro1.toString();
 	}
 	
 	

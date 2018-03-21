@@ -1,7 +1,9 @@
-package es.fpdual.eadmin.eadmin.modulo;
+package es.fpdual.eadmin.eadmin.modelo;
 
 import java.util.Date;
 import java.util.List;
+
+import es.fpdual.eadmin.eadmin.repositorio.RepositorioDocumento;
 
 public class Expediente extends AdministracionElectronicaBase {
 

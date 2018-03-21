@@ -1,4 +1,4 @@
-package es.fpdual.eadmin.eadmin.modulo;
+package es.fpdual.eadmin.eadmin.modelo;
 
 import static org.junit.Assert.assertEquals;
 
