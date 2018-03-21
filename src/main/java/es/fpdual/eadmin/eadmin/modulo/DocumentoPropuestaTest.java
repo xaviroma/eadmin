@@ -1,0 +1,35 @@
+package es.fpdual.eadmin.eadmin.modulo;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.Date;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class DocumentoPropuestaTest {
+	
+	private static final Integer CODIGO_DOCUMENTO = 1;
+	private static final String NOMBRE_DOCUMENTO = "nombre";
+	private static final Date FECHA_CREACION = new Date();
+	private static final Boolean DOCUMENTO_PUBLICO = true;
+	private static final Integer CODIGO_PROPUESTA = 123;
+	private static final Integer EJERCICIO_PROPUESTA = 56;
+	private static final String GRUPO_POLITICO = "VACIO";
+
+	/*
+	Documento_Registro doc_reg1;
+	@Before
+	public void Inicializar() {
+		doc_reg1 = new Documento_Registro(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO, NIFINTERESADO, CONTROL_REGISTRO);
+	}
+
+	@Test
+	public void DOCUMENTO_CONTABLE() {
+				
+		assertEquals(CONTROL_REGISTRO, doc_reg1.getControlRegistro());
+		assertEquals(NIFINTERESADO, doc_reg1.getNifInteresado());
+	
+	}
+	*/
+}
