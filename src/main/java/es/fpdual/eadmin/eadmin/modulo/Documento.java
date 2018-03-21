@@ -36,6 +36,14 @@ public class Documento {
 	public EstadoDocumento getEstado() {
 		return estado;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Documento [codigo=" + codigo + ", nombre=" + nombre + ", fechaCreacion=" + fechaCreacion + ", publico="
+				+ publico + ", estado=" + estado + "]";
+	}
 
 	@Override
 	public int hashCode() {
