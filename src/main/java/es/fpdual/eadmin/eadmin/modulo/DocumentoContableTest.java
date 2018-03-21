@@ -18,18 +18,23 @@ public class DocumentoContableTest {
 	private static final String NIFINTERESADO = "nombre";
 
 	
-	Documento_Contable doc_cont1;
+	DocumentoContable doc_cont1;
 	@Before
 	public void Inicializar() {
-		doc_cont1 = new Documento_Contable(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO, IMPORTE, NIFINTERESADO);
+		doc_cont1 = new DocumentoContable(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO, IMPORTE, NIFINTERESADO);
 	}
 	
 	@Test
 	public void DOCUMENTO_CONTABLE() {
 				
 		assertEquals(IMPORTE, doc_cont1.getImporte());
-		assertEquals(NIFINTERESADO, doc_cont1.getDNI_Interesado());
+		assertEquals(NIFINTERESADO, doc_cont1.getNifInteresado());
 	
+	}
+	
+	@Test
+	public void probarToString() {
+		doc_cont1.toString();
 	}
 
 }

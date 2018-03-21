@@ -5,13 +5,13 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 
-public class Documento_Contable extends Documento {
+public class DocumentoContable extends Documento {
 	
 	private BigDecimal importe;
 	private String nifInteresado;
 	
 
-	public Documento_Contable(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
+	public DocumentoContable(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
 			EstadoDocumento estado, BigDecimal importe, String nifInteresado) {
 		super(codigo, nombre, fechaCreacion, publico, estado);
 		this.importe = importe;
@@ -22,7 +22,7 @@ public class Documento_Contable extends Documento {
 		return importe;
 	}
 
-	public String getDNI_Interesado() {
+	public String getNifInteresado() {
 		return nifInteresado;
 	}
 

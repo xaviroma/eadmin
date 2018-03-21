@@ -72,7 +72,9 @@ public class ExpedieteTest {
 	
 	@Test
 	public void probarMetodoArchivar() {
-		EXP1.archivar();
+		final Expediente EXP2 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, EstadoExpediente.INICIADO);
+		
+		EXP2.archivar();
 	}
 	
 	

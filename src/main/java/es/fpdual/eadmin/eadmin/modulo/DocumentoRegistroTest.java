@@ -18,18 +18,21 @@ public class DocumentoRegistroTest {
 	private static final String CONTROL_REGISTRO = "456";
 
 	
-	Documento_Registro doc_reg1;
+	DocumentoRegistro doc_reg1;
 	@Before
 	public void Inicializar() {
-		doc_reg1 = new Documento_Registro(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO, NIFINTERESADO, CONTROL_REGISTRO);
+		doc_reg1 = new DocumentoRegistro(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO, NIFINTERESADO, CONTROL_REGISTRO);
 	}
 	
 	@Test
-	public void DOCUMENTO_CONTABLE() {
-				
+	public void DOCUMENTO_CONTABLE() {			
 		assertEquals(CONTROL_REGISTRO, doc_reg1.getControlRegistro());
 		assertEquals(NIFINTERESADO, doc_reg1.getNifInteresado());
+	}
 	
+	@Test
+	public void probarToString() {
+		doc_reg1.toString();
 	}
 
 }

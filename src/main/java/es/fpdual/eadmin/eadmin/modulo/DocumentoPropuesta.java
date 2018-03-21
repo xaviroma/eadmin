@@ -4,15 +4,15 @@ import java.util.Date;
 
 public class DocumentoPropuesta extends Documento {
 	
-	private Integer codigo_pro;
+	private Integer codigoPro;
 	private Integer ejercicio;
 	private String grupoPolitico;
 	
 	
 	public DocumentoPropuesta(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
-			EstadoDocumento estado, Integer codigo_prop, Integer ejercicio, String grupoPolitico) {
+			EstadoDocumento estado, Integer codigoProp, Integer ejercicio, String grupoPolitico) {
 		super(codigo, nombre, fechaCreacion, publico, estado);
-		this.codigo_pro = codigo_prop;
+		this.codigoPro = codigoProp;
 		this.ejercicio = ejercicio;
 		this.grupoPolitico = grupoPolitico;
 	}
@@ -20,7 +20,7 @@ public class DocumentoPropuesta extends Documento {
 
 	
 	public Integer getCodigo_pro() {
-		return codigo_pro;
+		return codigoPro;
 	}
 
 	public Integer getEjercicio() {
@@ -35,7 +35,7 @@ public class DocumentoPropuesta extends Documento {
 
 	@Override
 	public String toString() {
-		return "DocumentoPropuesta [codigo=" + codigo_pro + ", ejercicio=" + ejercicio + ", grupoPolitico=" + grupoPolitico
+		return "DocumentoPropuesta [codigo=" + codigoPro + ", ejercicio=" + ejercicio + ", grupoPolitico=" + grupoPolitico
 				+ "]";
 	}
 	

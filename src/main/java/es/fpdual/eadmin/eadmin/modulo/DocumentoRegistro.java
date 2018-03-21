@@ -2,13 +2,13 @@ package es.fpdual.eadmin.eadmin.modulo;
 
 import java.util.Date;
 
-public class Documento_Registro extends Documento {
+public class DocumentoRegistro extends Documento {
 	
 	private String nifInteresado;
 	private String controlRegistro;
 	
 	
-	public Documento_Registro(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
+	public DocumentoRegistro(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
 			EstadoDocumento estado, String nifInteresado, String controlRegistro) {
 		super(codigo, nombre, fechaCreacion, publico, estado);
 		this.nifInteresado = nifInteresado;
@@ -16,7 +16,6 @@ public class Documento_Registro extends Documento {
 	}
 
 
-	
 	public String getNifInteresado() {
 		return nifInteresado;
 	}
@@ -25,7 +24,6 @@ public class Documento_Registro extends Documento {
 	public String getControlRegistro() {
 		return controlRegistro;
 	}
-
 
 
 	@Override
