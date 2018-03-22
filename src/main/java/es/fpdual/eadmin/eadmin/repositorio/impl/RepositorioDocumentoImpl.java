@@ -27,7 +27,7 @@ public class RepositorioDocumentoImpl implements RepositorioDocumento {
 
 	@Override
 	public void modificarDocumento(Documento documento) {
-		if (documentos.contains(documento)) {
+		if (!documentos.contains(documento)) {
 			throw new IllegalArgumentException("El documento ha modificar no existe.");
 		}
 		
@@ -37,7 +37,7 @@ public class RepositorioDocumentoImpl implements RepositorioDocumento {
 
 	@Override
 	public void eliminarDocumento(Integer codigo) {
-		
+		/*
 		Documento documentoEncontrado = null;
 		
 		for (int i = 0; i< documentos.size(); i++) {
@@ -46,12 +46,21 @@ public class RepositorioDocumentoImpl implements RepositorioDocumento {
 				break;
 			}
 		}
+		*/
 		
+		Documento documentoEncontrado = documentos.stream().
+				filter(d -> tieneIgualCodigo(d, codigo)).
+				findFirst().orElseGet(null);
+				
+				
 		if (documentoEncontrado != null) {
 			documentos.remove(documentoEncontrado);
 		}
 	}
 	
+	protected boolean tieneIgualCodigo(Documento documento, Integer codigo) {
+		return documento.getCodigo().equals(codigo);
+	}
 	
 
 }
