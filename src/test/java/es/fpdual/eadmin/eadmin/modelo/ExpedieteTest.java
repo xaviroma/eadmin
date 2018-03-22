@@ -16,12 +16,13 @@ public class ExpedieteTest {
 	private static final Date FECHA_CREACION_EXP = new Date();
 	// private static final Date FECHA_ARCHIVADO_EXP = new Date();
 	private static final Boolean PUBLICO_EXP = true;
+	private static final Date FECHA_MODIFICACION = new Date();
 	
 	
 	Expediente EXP1;
 	@Before
 	public void Inicializar() {
-		EXP1 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, EstadoExpediente.INICIADO);
+		EXP1 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, FECHA_MODIFICACION, null, EstadoExpediente.INICIADO);
 	}
 	
 	
@@ -40,7 +41,7 @@ public class ExpedieteTest {
 	
 	@Test
 	public void deberiaDevolverTrueSiTodoEsIgual() {
-		final Expediente EXP2 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, EstadoExpediente.INICIADO);
+		final Expediente EXP2 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, FECHA_MODIFICACION, null, EstadoExpediente.INICIADO);
 
 		final Boolean resultado = EXP2.equals(EXP1);
 		assertTrue(resultado);
@@ -48,7 +49,7 @@ public class ExpedieteTest {
 	
 	@Test
 	public void deberiaDevolverFalseSiElCodigoNoEsIgual() {
-		final Expediente EXP2 = new Expediente(5, null, null, null, null);
+		final Expediente EXP2 = new Expediente(5, null, null, null, null, null, null);
 
 		final Boolean resultado = EXP2.equals(EXP1);
 		assertFalse(resultado);
@@ -56,7 +57,7 @@ public class ExpedieteTest {
 	
 	@Test
 	public void deberiaDevolverFalseSiNoEsUnExpediente() {
-		final Expediente EXP2 = new Expediente(5, null, null, null, null);
+		final Expediente EXP2 = new Expediente(5, null, null, null, null, null, null);
 		
 		final boolean resultado = EXP1.equals(new Date());
 		assertFalse(resultado);
@@ -65,14 +66,14 @@ public class ExpedieteTest {
 	@Test
 	public void deberiaDevolverHasCodeDelCodigo() {
 		final int resultado = EXP1.hashCode();
-		final Expediente EXP2 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, EstadoExpediente.INICIADO);
+		final Expediente EXP2 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, FECHA_MODIFICACION, null, EstadoExpediente.INICIADO);
 		
 		assertEquals(resultado,EXP2.hashCode());
 	}
 	
 	@Test
 	public void probarMetodoArchivar() {
-		final Expediente EXP2 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, EstadoExpediente.INICIADO);
+		final Expediente EXP2 = new Expediente(CODIGO_EXP, NOMBRE_EXP, FECHA_CREACION_EXP, PUBLICO_EXP, FECHA_MODIFICACION, null, EstadoExpediente.INICIADO);
 		
 		EXP2.archivar();
 	}

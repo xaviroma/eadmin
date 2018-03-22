@@ -14,6 +14,7 @@ public class DocumentoRegistroTest {
 	private static final String NOMBRE_DOCUMENTO = "nombre";
 	private static final Date FECHA_CREACION = new Date();
 	private static final Boolean DOCUMENTO_PUBLICO = true;
+	private static final Date FECHA_MODIFICACION = new Date();
 	private static final String NIFINTERESADO = "123";
 	private static final String CONTROL_REGISTRO = "456";
 
@@ -21,7 +22,7 @@ public class DocumentoRegistroTest {
 	DocumentoRegistro doc_reg1;
 	@Before
 	public void Inicializar() {
-		doc_reg1 = new DocumentoRegistro(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO, NIFINTERESADO, CONTROL_REGISTRO);
+		doc_reg1 = new DocumentoRegistro(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, FECHA_MODIFICACION, EstadoDocumento.ACTIVO, NIFINTERESADO, CONTROL_REGISTRO);
 	}
 	
 	@Test

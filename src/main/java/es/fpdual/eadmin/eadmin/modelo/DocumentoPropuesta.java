@@ -10,15 +10,14 @@ public class DocumentoPropuesta extends Documento {
 	
 	
 	public DocumentoPropuesta(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
-			EstadoDocumento estado, Integer codigoProp, Integer ejercicio, String grupoPolitico) {
-		super(codigo, nombre, fechaCreacion, publico, estado);
-		this.codigoPro = codigoProp;
+			Date fechaUltimaModificacion, EstadoDocumento estado, Integer codigoPro, Integer ejercicio,
+			String grupoPolitico) {
+		super(codigo, nombre, fechaCreacion, publico, fechaUltimaModificacion, estado);
+		this.codigoPro = codigoPro;
 		this.ejercicio = ejercicio;
 		this.grupoPolitico = grupoPolitico;
 	}
 
-
-	
 	public Integer getCodigo_pro() {
 		return codigoPro;
 	}

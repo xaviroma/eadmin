@@ -1,4 +1,4 @@
-package es.fpdual.eadmin.eadmin.modelo;
+package es.fpdual.eadmin.eadmin.repositorio.impl;
 
 import static org.junit.Assert.assertTrue;
 
@@ -7,6 +7,8 @@ import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
+import es.fpdual.eadmin.eadmin.modelo.Documento;
+import es.fpdual.eadmin.eadmin.modelo.EstadoDocumento;
 import es.fpdual.eadmin.eadmin.repositorio.RepositorioDocumento;
 import es.fpdual.eadmin.eadmin.repositorio.impl.RepositorioDocumentoImpl;
 
@@ -18,7 +20,8 @@ public class RepositorioDocumentoTest {
 	private static final String NOMBRE_DOCUMENTO = "nombre";
 	private static final Date FECHA_CREACION = new Date();
 	private static final Boolean DOCUMENTO_PUBLICO = true;
-	private static final Documento DOCUMENTO = new Documento(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO);
+	private static final Date FECHA_MODIFICACION = new Date();
+	private static final Documento DOCUMENTO = new Documento(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, FECHA_MODIFICACION, EstadoDocumento.ACTIVO);
 	
 	@Before
 	public void InicializarEnCadaTest() {

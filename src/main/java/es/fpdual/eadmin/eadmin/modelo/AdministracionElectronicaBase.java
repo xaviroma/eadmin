@@ -8,14 +8,17 @@ public abstract class AdministracionElectronicaBase {
 	private String nombre;
 	private Date fechaCreacion;
 	private Boolean publico;
+	private Date fechaUltimaModificacion;
 	
 	
-	public AdministracionElectronicaBase(Integer codigo, String nombre, Date fechaCreacion, Boolean publico) {
+	public AdministracionElectronicaBase(Integer codigo, String nombre, 
+			Date fechaCreacion, Boolean publico, Date fechaUltimaModificacion) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.fechaCreacion = fechaCreacion;
 		this.publico = publico;
+		this.fechaUltimaModificacion = null;
 	}
 
 
@@ -38,7 +41,11 @@ public abstract class AdministracionElectronicaBase {
 		return publico;
 	}
 	
-	
+	public Date getFechaUltimaModificacion() {
+		return fechaUltimaModificacion;
+	}
+
+
 	@Override
 	public int hashCode() {
 		return codigo.hashCode();

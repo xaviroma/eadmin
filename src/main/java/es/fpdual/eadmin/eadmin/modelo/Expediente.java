@@ -13,16 +13,18 @@ public class Expediente extends AdministracionElectronicaBase {
 	private List<Documento> documentos;
 	private Expediente obj;
 	
+	
+	
 
-
-	public Expediente(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
-			EstadoExpediente estado){
-		super(codigo, nombre, fechaCreacion, publico);
-		this.fechaArchivado = null;
+	public Expediente(Integer codigo, String nombre, Date fechaCreacion, Boolean publico, Date fechaUltimaModificacion,
+			Date fechaArchivado, EstadoExpediente estado) {
+		super(codigo, nombre, fechaCreacion, publico, fechaUltimaModificacion);
+		this.fechaArchivado = fechaArchivado;
 		this.estado = estado;
+		this.documentos = documentos;
+		this.obj = obj;
 	}
-	
-	
+
 
 	public Date getFechaArchivado() {
 		return fechaArchivado;

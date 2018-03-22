@@ -14,6 +14,7 @@ public class DocumentoPropuestaTest {
 	private static final String NOMBRE_DOCUMENTO = "nombre";
 	private static final Date FECHA_CREACION = new Date();
 	private static final Boolean DOCUMENTO_PUBLICO = true;
+	private static final Date FECHA_MODIFICACION = new Date();
 	private static final Integer CODIGO_PROPUESTA = 123;
 	private static final Integer EJERCICIO_PROPUESTA = 56;
 	private static final String GRUPO_POLITICO = "VACIO";
@@ -22,7 +23,7 @@ public class DocumentoPropuestaTest {
 	DocumentoPropuesta doc_pro1;
 	@Before
 	public void Inicializar() {
-		doc_pro1 = new DocumentoPropuesta(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO, CODIGO_PROPUESTA, EJERCICIO_PROPUESTA, GRUPO_POLITICO);
+		doc_pro1 = new DocumentoPropuesta(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, FECHA_MODIFICACION, EstadoDocumento.ACTIVO, CODIGO_PROPUESTA, EJERCICIO_PROPUESTA, GRUPO_POLITICO);
 	}
 
 	@Test
