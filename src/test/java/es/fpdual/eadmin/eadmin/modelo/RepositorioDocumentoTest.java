@@ -41,8 +41,14 @@ public class RepositorioDocumentoTest {
 	}
 	
 	@Test
-	public void modificarDocumento() {
+	public void modificarDocumentoQueExiste() {
 		this.repositorioDocumento.getDocumentos().add(DOCUMENTO);
+		this.repositorioDocumento.modificarDocumento(DOCUMENTO);
+		
+	}
+	
+	@Test
+	public void modificarDocumentoQueNoExiste() {
 		this.repositorioDocumento.modificarDocumento(DOCUMENTO);
 		
 	}
