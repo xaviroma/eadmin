@@ -1,5 +1,6 @@
 package es.fpdual.eadmin.eadmin.modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -7,21 +8,19 @@ import es.fpdual.eadmin.eadmin.repositorio.RepositorioDocumento;
 
 public class Expediente extends AdministracionElectronicaBase {
 
-	private  Date fechaArchivado;
+	private  Date fechaArchivado = null;
 	private  EstadoExpediente estado;
 	
-	private final List<Documento> documentos;
-	private final Expediente obj;
-	
+	// Creamos una lista de documentos.
+	private final List<Documento> documentos;	
 	
 	public Expediente(Integer codigo, String nombre, Date fechaCreacion, Boolean publico, Date fechaUltimaModificacion,
-			Date fechaArchivado, EstadoExpediente estado, List<Documento> documentos, Expediente obj) {
+			Date fechaArchivado, EstadoExpediente estado, List<Documento> documentos) {
 		super(codigo, nombre, fechaCreacion, publico, fechaUltimaModificacion);
-		this.fechaArchivado = fechaArchivado;
 		this.estado = estado;
 		this.documentos = documentos;
-		this.obj = obj;
 	}
+
 
 	public Date getFechaArchivado() {
 		return fechaArchivado;
@@ -35,18 +34,15 @@ public class Expediente extends AdministracionElectronicaBase {
 		return documentos;
 	}
 
-	public Expediente getObj() {
-		return obj;
-	}
 
-
+	/*
 	public void archivar() {
 		if(this.fechaArchivado == null) {
 			this.fechaArchivado = new Date();
 			this.estado = EstadoExpediente.ARCHIVADO;
 		}
 	}
-	
+	*/
 	
 	@Override
 	public int hashCode() {
