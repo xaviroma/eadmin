@@ -22,8 +22,6 @@ public class Expediente extends AdministracionElectronicaBase {
 		this.estado = estado;
 	}
 	
-	
-
 	public Date getFechaArchivado() {
 		return fechaArchivado;
 	}
