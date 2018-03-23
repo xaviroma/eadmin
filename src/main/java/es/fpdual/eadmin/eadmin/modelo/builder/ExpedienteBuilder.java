@@ -2,6 +2,7 @@ package es.fpdual.eadmin.eadmin.modelo.builder;
 
 import java.util.Date;
 
+import es.fpdual.eadmin.eadmin.modelo.Documento;
 import es.fpdual.eadmin.eadmin.modelo.EstadoExpediente;
 
 public class ExpedienteBuilder {
@@ -14,6 +15,8 @@ public class ExpedienteBuilder {
 	protected Date fechaArchivado;
 	protected EstadoExpediente estado;
 	
-	
+	public Expediente construir() {
+		return new Expediente(codigo, nombre, fechaCreacion, publico, fechaUltimaModificacion, fechaArchivado, estado);
+	}
 
 }
