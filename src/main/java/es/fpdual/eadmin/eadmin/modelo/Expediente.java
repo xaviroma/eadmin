@@ -7,24 +7,21 @@ import es.fpdual.eadmin.eadmin.repositorio.RepositorioDocumento;
 
 public class Expediente extends AdministracionElectronicaBase {
 
-	private Date fechaArchivado;
-	private EstadoExpediente estado;
+	private  Date fechaArchivado;
+	private  EstadoExpediente estado;
 	
-	private List<Documento> documentos;
-	private Expediente obj;
+	private final List<Documento> documentos;
+	private final Expediente obj;
 	
 	
-	
-
 	public Expediente(Integer codigo, String nombre, Date fechaCreacion, Boolean publico, Date fechaUltimaModificacion,
-			Date fechaArchivado, EstadoExpediente estado) {
+			Date fechaArchivado, EstadoExpediente estado, List<Documento> documentos, Expediente obj) {
 		super(codigo, nombre, fechaCreacion, publico, fechaUltimaModificacion);
 		this.fechaArchivado = fechaArchivado;
 		this.estado = estado;
 		this.documentos = documentos;
 		this.obj = obj;
 	}
-
 
 	public Date getFechaArchivado() {
 		return fechaArchivado;

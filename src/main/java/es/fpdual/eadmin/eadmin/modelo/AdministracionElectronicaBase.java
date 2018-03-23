@@ -4,11 +4,11 @@ import java.util.Date;
 
 public abstract class AdministracionElectronicaBase {
 	
-	private Integer codigo;
-	private String nombre;
-	private Date fechaCreacion;
-	private Boolean publico;
-	private Date fechaUltimaModificacion;
+	protected final Integer codigo;
+	protected final String nombre;
+	protected final Date fechaCreacion;
+	protected final Boolean publico;
+	protected final Date fechaUltimaModificacion;
 	
 	
 	public AdministracionElectronicaBase(Integer codigo, String nombre, 
