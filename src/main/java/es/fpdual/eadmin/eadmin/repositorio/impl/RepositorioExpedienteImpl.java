@@ -57,7 +57,7 @@ public class RepositorioExpedienteImpl implements RepositorioExpediente{
 				findFirst().orElseGet(null);
 		
 		if (documentoEncontrado != null) {
-			Expediente.getDocumentos();
+			
 		}
 		
 		//expedientes.get(getExpedientes().indexOf(expediente)).getDocumentos().add(documento);
