@@ -1,0 +1,16 @@
+package es.fpdual.eadmin.eadmin.repositorio.impl;
+
+public class RepositorioExpedienteTest {
+	
+	private static final Integer CODIGO = 1;
+	
+	
+	public void probarAltaExpediente() {
+		
+		RepositorioExpedienteImpl RepositorioExpediente = new RepositorioExpedienteImpl();
+		
+		RepositorioExpediente.altaExpediente();
+		
+	}
+
+}

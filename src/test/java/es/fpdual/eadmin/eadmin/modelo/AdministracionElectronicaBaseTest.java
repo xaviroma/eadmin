@@ -13,9 +13,11 @@ public class AdministracionElectronicaBaseTest {
 	
 	public class AdministracionElectronicaBaseFake extends AdministracionElectronicaBase{
 
-		public AdministracionElectronicaBaseFake(Integer codigo, String nombre, Date fechaCreacion, Boolean publico) {
-			super(codigo, nombre, fechaCreacion, publico);
+		public AdministracionElectronicaBaseFake(Integer codigo, String nombre, Date fechaCreacion, Boolean publico, Date fechaUltimaModificacion) {
+			super(codigo, nombre, fechaCreacion, publico, fechaUltimaModificacion);
 		}
+		
+		
 		
 	}
 	
@@ -23,12 +25,13 @@ public class AdministracionElectronicaBaseTest {
 	private static final String NOMBRE_DOCUMENTO = "nombre";
 	private static final Date FECHA_CREACION = new Date();
 	private static final Boolean DOCUMENTO_PUBLICO = true;
+	private static final Date FECHA_MODIFICACION = new Date();
 
 	
 	AdministracionElectronicaBaseFake doc1;
 	@Before
 	public void Inicializar() {
-		doc1 = new AdministracionElectronicaBaseFake(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO);
+		doc1 = new AdministracionElectronicaBaseFake(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, FECHA_MODIFICACION);
 	}
 	
 	@Test
@@ -38,6 +41,7 @@ public class AdministracionElectronicaBaseTest {
 		assertEquals(NOMBRE_DOCUMENTO, doc1.getNombre());
 		assertEquals(FECHA_CREACION, doc1.getFechaCreacion());
 		assertEquals(DOCUMENTO_PUBLICO, doc1.getPublico());
+		assertEquals(FECHA_MODIFICACION, doc1.getFechaUltimaModificacion());
 	
 	}
 	
@@ -45,7 +49,7 @@ public class AdministracionElectronicaBaseTest {
 	public void deberiaDevolverHasCodeDelCodigo() {
 		final int resultado = doc1.hashCode();
 		AdministracionElectronicaBaseFake doc2;
-		doc2 = new AdministracionElectronicaBaseFake(1, null, null, null);
+		doc2 = new AdministracionElectronicaBaseFake(1, null, null, null, null);
 		
 		assertEquals(resultado, doc2.hashCode());
 	}

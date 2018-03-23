@@ -14,6 +14,7 @@ public class DocumentoContableTest {
 	private static final String NOMBRE_DOCUMENTO = "nombre";
 	private static final Date FECHA_CREACION = new Date();
 	private static final Boolean DOCUMENTO_PUBLICO = true;
+	private static final Date FECHA_MODIFICACION = new Date();
 	private static final BigDecimal IMPORTE = new java.math.BigDecimal("0");
 	private static final String NIFINTERESADO = "nombre";
 
@@ -21,7 +22,7 @@ public class DocumentoContableTest {
 	DocumentoContable doc_cont1;
 	@Before
 	public void Inicializar() {
-		doc_cont1 = new DocumentoContable(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO, IMPORTE, NIFINTERESADO);
+		doc_cont1 = new DocumentoContable(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, FECHA_MODIFICACION, EstadoDocumento.ACTIVO, IMPORTE, NIFINTERESADO);
 	}
 	
 	@Test

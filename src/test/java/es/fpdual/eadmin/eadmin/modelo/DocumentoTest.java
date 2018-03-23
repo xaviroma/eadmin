@@ -16,12 +16,13 @@ public class DocumentoTest {
 	private static final String NOMBRE_DOCUMENTO = "nombre";
 	private static final Date FECHA_CREACION = new Date();
 	private static final Boolean DOCUMENTO_PUBLICO = true;
+	private static final Date FECHA_MODIFICACION = new Date();
 	
 	Documento documento1;
 	
 	@Before
 	public void Inicializar() {
-		documento1 = new Documento(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, EstadoDocumento.ACTIVO);
+		documento1 = new Documento(CODIGO_DOCUMENTO, NOMBRE_DOCUMENTO, FECHA_CREACION, DOCUMENTO_PUBLICO, FECHA_MODIFICACION, EstadoDocumento.ACTIVO);
 	}
 	
 	
@@ -40,7 +41,7 @@ public class DocumentoTest {
 	
 	@Test
 	public void deberiaDevolverTrueSiTienenIgualCodigo() {
-		final Documento doc2 = new Documento(CODIGO_DOCUMENTO, null, null, null, null);
+		final Documento doc2 = new Documento(CODIGO_DOCUMENTO, null, null, null, null, null);
 
 		final Boolean resultado = doc2.equals(documento1);
 		assertTrue(resultado);
@@ -48,7 +49,7 @@ public class DocumentoTest {
 
 	@Test
 	public void deberiaDevolverFalseSiNoTienenIgualCodigo() {
-		final Documento doc2 = new Documento(5, null, null, null, null);
+		final Documento doc2 = new Documento(5, null, null, null, null, null);
 
 		final Boolean resultado = doc2.equals(documento1);
 		assertFalse(resultado);
@@ -63,7 +64,7 @@ public class DocumentoTest {
 	@Test
 	public void deberiaDevolverHasCodeDelCodigo() {
 		final int resultado = documento1.hashCode();
-		Documento doc2 = new Documento(CODIGO_DOCUMENTO, "nombre", null, null, null);
+		Documento doc2 = new Documento(CODIGO_DOCUMENTO, "nombre", null, null, null, null);
 		
 		assertEquals(resultado, doc2.hashCode());
 	}

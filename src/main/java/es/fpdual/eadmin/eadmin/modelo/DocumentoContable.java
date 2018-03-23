@@ -7,13 +7,15 @@ import java.util.Date;
 
 public class DocumentoContable extends Documento {
 	
-	private BigDecimal importe;
-	private String nifInteresado;
+	protected final BigDecimal importe;
+	protected final String nifInteresado;
+	
+
 	
 
 	public DocumentoContable(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
-			EstadoDocumento estado, BigDecimal importe, String nifInteresado) {
-		super(codigo, nombre, fechaCreacion, publico, estado);
+			Date fechaUltimaModificacion, EstadoDocumento estado, BigDecimal importe, String nifInteresado) {
+		super(codigo, nombre, fechaCreacion, publico, fechaUltimaModificacion, estado);
 		this.importe = importe;
 		this.nifInteresado = nifInteresado;
 	}
