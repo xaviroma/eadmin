@@ -11,17 +11,16 @@ public class Expediente extends AdministracionElectronicaBase {
 	private EstadoExpediente estado;
 	
 	private List<Documento> documentos;
-	private Expediente obj;
+
 	
-
-
-	public Expediente(Integer codigo, String nombre, Date fechaCreacion, Boolean publico,
-			EstadoExpediente estado){
-		super(codigo, nombre, fechaCreacion, publico);
-		this.fechaArchivado = null;
+	public Expediente(Integer codigo, String nombre, Date fechaCreacion, Boolean publico, Date fechaUltimaModificacion,
+			Date fechaArchivado, EstadoExpediente estado, List<Documento> documentos) {
+		super(codigo, nombre, fechaCreacion, publico, fechaUltimaModificacion);
+		this.fechaArchivado = fechaArchivado;
 		this.estado = estado;
+		this.documentos = documentos;
 	}
-	
+
 	public Date getFechaArchivado() {
 		return fechaArchivado;
 	}
@@ -33,11 +32,6 @@ public class Expediente extends AdministracionElectronicaBase {
 	public List<Documento> getDocumentos() {
 		return documentos;
 	}
-
-	public Expediente getObj() {
-		return obj;
-	}
-
 
 	public void archivar() {
 		if(this.fechaArchivado == null) {
