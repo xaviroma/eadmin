@@ -50,25 +50,31 @@ public class RepositorioExpedienteImpl implements RepositorioExpediente{
 	}
 
 	@Override
-	public void asociarDocumentoAlExpediente(Integer codigoExpediente, Documento documento) {
+	public Expediente asociarDocumentoAlExpediente(Integer codigoExpediente, Documento documento) {
 		
-		Expediente documentoEncontrado = expedientes.stream().
+		Expediente expedienteEncontrado = expedientes.stream().
 				filter(d -> tieneIgualCodigo(d, codigoExpediente)).
 				findFirst().orElseGet(null);
 		
-		if (documentoEncontrado != null) {
-			
+		if (expedienteEncontrado != null) {
+			expedienteEncontrado.getDocumentos().add(documento);
 		}
-		
-		//expedientes.get(getExpedientes().indexOf(expediente)).getDocumentos().add(documento);
-		
+		return null;
+				
 	}
 
 	@Override
-	public void desasociarDocumentoDelExpediente(Integer codigoExpediente, Integer codigoDocumento) {
+	public Expediente desasociarDocumentoDelExpediente(Integer codigoExpediente, Integer codigoDocumento) {
 		
-		//expedientes.get(getExpedientes().indexOf(expediente)).getDocumentos().remove(documento);		
+		Expediente expedienteEncontrado = expedientes.stream().
+				filter(d -> tieneIgualCodigo(d, codigoExpediente)).
+				findFirst().orElseGet(null);
 		
+		if (expedienteEncontrado != null) {
+			expedienteEncontrado.getDocumentos().remove(codigoDocumento);
+		}
+		return null;
+			
 	}
 
 	protected boolean tieneIgualCodigo(Expediente expediente, Integer codigo) {

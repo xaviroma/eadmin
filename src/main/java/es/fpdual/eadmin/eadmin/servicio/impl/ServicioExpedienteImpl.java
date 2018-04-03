@@ -27,7 +27,7 @@ public class ServicioExpedienteImpl implements ServicioExpediente{
 		
 		final Expediente expedienteFechaModificacion = agregarFechaModificacion(expediente);
 		
-		repositorioExpediente.modificarExpediente(expedienteFechaModificacion);
+		this.repositorioExpediente.modificarExpediente(expedienteFechaModificacion);
 
 		return expedienteFechaModificacion;
 	}
@@ -36,7 +36,7 @@ public class ServicioExpedienteImpl implements ServicioExpediente{
 	@Override
 	public void eliminarExpediente(Integer codigo) {
 		
-		repositorioExpediente.eliminarExpediente(codigo);
+		this.repositorioExpediente.eliminarExpediente(codigo);
 		
 	}
 
@@ -44,15 +44,15 @@ public class ServicioExpedienteImpl implements ServicioExpediente{
 	public Expediente asociarDocumentoAlExpediente(Integer codigoExpediente, Documento documento) {
 		
 		
-		this.repositorioExpediente.asociarDocumentoAlExpediente(codigoExpediente, documento);
-		return null;
+		return this.repositorioExpediente.asociarDocumentoAlExpediente(codigoExpediente, documento);
+
 	}
 
 	@Override
 	public Expediente desasociarDocumentoDelExpediente(Integer codigoExpediente, Integer codigoDocumento) {
 		
-		//repositorioExpediente.desasociarDocumentoDelExpediente(expediente, documento);
-		return null;
+		return this.repositorioExpediente.desasociarDocumentoDelExpediente(codigoExpediente, codigoDocumento);
+
 	}
 	
 	

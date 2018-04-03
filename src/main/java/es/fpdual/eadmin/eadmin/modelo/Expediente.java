@@ -55,10 +55,6 @@ public class Expediente extends AdministracionElectronicaBase {
 					getPublico().equals(((Expediente) obj).getPublico());
 		}
 		return false;
-	}
-	
-	
-	
-	
+	}	
 
 }
