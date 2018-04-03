@@ -2,6 +2,7 @@ package es.fpdual.eadmin.eadmin.repositorio.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import es.fpdual.eadmin.eadmin.modelo.Documento;
 import es.fpdual.eadmin.eadmin.modelo.Expediente;
@@ -76,9 +77,29 @@ public class RepositorioExpedienteImpl implements RepositorioExpediente{
 		return null;
 			
 	}
+	
+	@Override
+	public Expediente obtenerExpedientePorCodigo(Integer codigoExpediente) {
+		
+		Optional<Expediente> expedienteEncontrado = expedientes.stream().
+				filter(d -> tieneIgualCodigo(d, codigoExpediente)).
+				findFirst();
+		
+		if (expedienteEncontrado.isPresent()) {
+			return expedienteEncontrado.get();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Expediente> obtenerTodosLosExpedientes() {
+		
+		return expedientes;
+	}
 
 	protected boolean tieneIgualCodigo(Expediente expediente, Integer codigo) {
 		return expediente.getCodigo().equals(codigo);
 	}
+
 
 }
